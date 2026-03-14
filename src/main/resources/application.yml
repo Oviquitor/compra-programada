@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: compra-programada
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/investment_engine
+    username: postgres
+    password: postgres
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+
+  kafka:
+    bootstrap-servers: localhost:9092
+
+server:
+  port: 8080
+
+springdoc:
+  swagger-ui:
+    path: /swagger
+
+app:
+  purchase-engine:
+    execution-days: 5,15,25
+  kafka:
+    topics:
+      ir-source-tax: ir-source-tax-topic
